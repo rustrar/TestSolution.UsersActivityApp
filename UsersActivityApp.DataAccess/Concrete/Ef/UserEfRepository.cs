@@ -7,7 +7,7 @@ using UsersActivityApp.DataAccess.Abstract;
 
 namespace UsersActivityApp.DataAccess.Concrete.Ef
 {
-  public class UserRepository : IEfEntityRepository<User>, IUserRepository
+  public class UserEfRepository : IEfEntityRepository<User>, IUserRepository
   {
     public User Add(User entity)
     {
