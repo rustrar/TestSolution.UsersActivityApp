@@ -8,7 +8,7 @@ namespace UsersActivityApp.Core.Entities.Concrete
   /// </summary>
   public class UserActivity : IEntity
   {
-    public UserActivity(int userId, DateTime registrationDate, DateTime lastActivity)
+    public UserActivity(int userId, DateTime registrationDate, DateTime? lastActivity = null)
     {
       Id = userId;
       RegistrationDate = registrationDate;
@@ -29,14 +29,11 @@ namespace UsersActivityApp.Core.Entities.Concrete
     /// Дата регистрации пользователя в системе.
     /// </summary>
     [Required]
-    [DisplayFormat(DataFormatString = "{dd.mm.yyyy}")]
     public DateTime RegistrationDate { get; set; }
 
     /// <summary>
     /// Дата последней активности пользователя в системе.
     /// </summary>
-    [Required]
-    [DisplayFormat(DataFormatString = "{dd.mm.yyyy}")]
-    public DateTime LastActivity { get; set; }
+    public DateTime? LastActivity { get; set; }
   }
 }

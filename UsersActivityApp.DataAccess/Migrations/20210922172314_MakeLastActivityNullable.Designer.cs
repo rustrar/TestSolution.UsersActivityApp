@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using UsersActivityApp.DataAccess.Concrete.Ef;
@@ -9,9 +10,10 @@ using UsersActivityApp.DataAccess.Concrete.Ef;
 namespace UsersActivityApp.DataAccess.Migrations
 {
     [DbContext(typeof(UsersActivityDbContext))]
-    partial class UsersActivityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210922172314_MakeLastActivityNullable")]
+    partial class MakeLastActivityNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
