@@ -26,7 +26,7 @@ namespace UsersActivityApp.WebApi
       services.AddDbContext<UsersActivityDbContext>(x =>
         x.UseNpgsql(Configuration.GetConnectionString("UsersActivityDbContext")));
 
-      services.AddScoped<IUserRepository, UserEfRepository>();
+      services.AddTransient<IUserActivityRepository, UserActivityEfRepository>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

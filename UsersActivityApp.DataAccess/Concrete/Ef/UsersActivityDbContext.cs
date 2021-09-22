@@ -9,6 +9,6 @@ namespace UsersActivityApp.DataAccess.Concrete.Ef
     {
     }
 
-    public DbSet<User> Users { get; set; }
+    public DbSet<UserActivity> UserActivities { get; set; }
   }
 }
