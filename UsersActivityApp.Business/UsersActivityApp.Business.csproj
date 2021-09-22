@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UsersActivityApp.Core\UsersActivityApp.Core.csproj" />
+    <ProjectReference Include="..\UsersActivityApp.DataAccess\UsersActivityApp.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>

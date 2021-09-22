@@ -11,12 +11,10 @@ namespace UsersActivityApp.Core.Data.Abstract
 
     List<T> GetList(Expression<Func<T, bool>> filter = null);
 
-    T Add(T entity);
+    void Add(T entity);
 
-    T AddList(List<T> entities);
+    void AddList(List<T> entities);
 
-    T Update(T entity);
-
-    void Delete(T entity);
+    void Update(T entity);
   }
 }

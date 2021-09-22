@@ -22,6 +22,7 @@ namespace UsersActivityApp.Core.Entities.Concrete
     /// <summary>
     /// ИД активности пользователя.
     /// </summary>
+    [Range(1, int.MaxValue)]
     public int Id { get; set; }
 
     /// <summary>
