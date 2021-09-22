@@ -24,6 +24,7 @@ namespace UsersActivityApp.DataAccess.Concrete.Ef
         _context.UserActivities.Add(entity);
       else
       {
+        _context.Entry(dbEntry).State = EntityState.Detached;
         Update(entity);
       }
       
