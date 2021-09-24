@@ -15,8 +15,8 @@ namespace UsersActivityApp.UnitTests
     [Test]
     [TestCase(1, "01.01.2000", "01.31.2001")]
     [TestCase(3000, "12.31.1990", "01.01.1991")]
-    [TestCase(40000, "06.06.2014", "05.31.2020")]
-    public void AddUserActivity_ShouldInvokeOneTime(int userId, DateTime regDate, DateTime lastActivity)
+    [TestCase(40000, "06.06.2014", null)]
+    public void AddUserActivity_ShouldInvokeOneTime(int userId, DateTime regDate, DateTime? lastActivity)
     {
       //arrange
       var userActivity = new UserActivity(userId, regDate, lastActivity);
@@ -40,7 +40,7 @@ namespace UsersActivityApp.UnitTests
       List<UserActivity> list = new List<UserActivity>();
       list.Add(new UserActivity(1, DateTime.Now, DateTime.Now));
       list.Add(new UserActivity(2, DateTime.Now.AddYears(-10), DateTime.Now.AddYears(-8)));
-      list.Add(new UserActivity(50000, new DateTime(2000, 12, 31),  new DateTime(2001, 01, 01)));           
+      list.Add(new UserActivity(50000, new DateTime(2000, 12, 31)));           
 
       var userEfRepository = new Mock<IUserActivityRepository>();
       userEfRepository.Setup(x => x.AddList(list)).Verifiable();
