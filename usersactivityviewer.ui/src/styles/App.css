@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+
+    background: #F9F9F9;
+    box-shadow: 10px 10px 70px rgba(93, 109, 151, 0.5);
+}
+
+.App {
+    width: 1334px;
+    height: 750px;    
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+}
+
+table {
+    border-spacing: 3px;
+    width: 100%;
+
+    font-weight: 300;
+    color: #5D6E97;
+}
+
+th, 
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    text-transform: uppercase;
+    color: #3C5AA8;
+    opacity: 0.4;
+}
+
+td {
+    color: #5D6E97;
+    background: #FFFFFF;
+}

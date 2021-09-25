@@ -1,0 +1,17 @@
+.btn {
+    margin: 5px;
+    width: 189px;
+    height: 38px;
+    border-radius: 10px;
+
+    color: #FFFFFF;
+    align-self: center;
+}
+
+.btn_primary {
+    background: #4A9DFF;
+}
+
+.btn_disabled {
+    background: rgba(74, 157, 255, 0.27);
+}
