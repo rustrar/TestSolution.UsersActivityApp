@@ -5,7 +5,7 @@ using UsersActivityApp.Core.Entities.Concrete;
 
 namespace UsersActivityApp.WebApi.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api")]
   [ApiController]
   public class UserActivitiesController : ControllerBase
   {
@@ -24,11 +24,19 @@ namespace UsersActivityApp.WebApi.Controllers
     }
 
     // POST: api/UserActivities
-    [HttpPost]
-    public ActionResult<bool> PostUserActivities(List<UserActivity> userActivities)
+    [HttpPost("useractivities")]
+    public ActionResult PostUserActivities(List<UserActivity> userActivities)
     {
       _service.AddList(userActivities);
-      return true;
+      return Ok();
+    }
+
+    // POST: api/UserActivity
+    [HttpPost("useractivity")]
+    public ActionResult PostUserActivity(UserActivity userActivity)
+    {
+      _service.Add(userActivity);
+      return Ok();
     }
   }
 }
