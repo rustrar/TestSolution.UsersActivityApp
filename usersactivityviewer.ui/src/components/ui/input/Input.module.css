@@ -1,0 +1,12 @@
+.inpt {
+    width: 226px;
+    height: 28px;
+    margin: 5px;    
+    padding: 8px;
+
+    border-radius: 20px;
+    border: none;
+
+    background: #FFFFFF;
+    color: #5D6E97;
+}
