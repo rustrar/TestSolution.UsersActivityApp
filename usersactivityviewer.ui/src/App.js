@@ -1,5 +1,5 @@
 import React from "react";
-import Button from './components/ui/button/Button';
+import RollingRetentionCalculator from "./components/RollingRetentionCalculator";
 import UserActivities from "./components/UserActivities";
 import "./styles/App.css";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <UserActivities />
-      <Button>Calculate</Button>
+      <RollingRetentionCalculator />
     </div>
   );
 }
