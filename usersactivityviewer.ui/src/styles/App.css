@@ -21,7 +21,7 @@
 
 .App {
     width: 1334px;
-    height: 750px;    
+    height: auto;
 }
 
 button {
