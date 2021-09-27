@@ -1,33 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UsersActivityApp.Business.Abstract;
 using UsersActivityApp.Core.Entities.Concrete;
 using UsersActivityApp.DataAccess.Abstract;
 
 namespace UsersActivityApp.Business.Concrete
 {
+  /// <summary>
+  /// Сервис для CRUD-операций с действиями пользователей.
+  /// </summary>
   public class UserActivityService : IUserActivityService
   {
+    #region Поля и свойства
+
     private readonly IUserActivityRepository _userRepository;
 
+    #endregion
+
+    #region Констукторы
+
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
+    /// <param name="userRepository">Репозиторий.</param>
     public UserActivityService(IUserActivityRepository userRepository)
     {
       _userRepository = userRepository;
     }
 
-    public void Add(UserActivity user)
+    #endregion
+
+    #region Методы
+
+    public void Add(UserActivity userActivity)
     {
-      _userRepository.Add(user);
+      _userRepository.Add(userActivity);
     }
 
-    public void AddList(List<UserActivity> users)
+    public void AddList(List<UserActivity> userActivitiess)
     {
-      _userRepository.AddList(users);
+      _userRepository.AddList(userActivitiess);
     }
 
-    public UserActivity Get(int userId)
+    public UserActivity Get(int id)
     {
-      return _userRepository.Get(u => u.Id == userId);
+      return _userRepository.Get(u => u.Id == id);
     }
 
     public List<UserActivity> GetAll()
@@ -39,5 +55,7 @@ namespace UsersActivityApp.Business.Concrete
     {
       _userRepository.Delete(id);
     }
+
+    #endregion
   }
 }

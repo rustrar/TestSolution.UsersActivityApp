@@ -4,20 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace UsersActivityApp.Core.Entities.Concrete
 {
   /// <summary>
-  /// Пользователь системы.
+  /// Активность пользователя системы.
   /// </summary>
   public class UserActivity : IEntity
   {
-    public UserActivity(int userId, DateTime registrationDate, DateTime? lastActivity = null)
-    {
-      Id = userId;
-      RegistrationDate = registrationDate;
-      LastActivity = lastActivity;
-    }
-
-    public UserActivity()
-    {
-    }
+    #region Поля и свойства
 
     /// <summary>
     /// ИД активности пользователя.
@@ -35,5 +26,22 @@ namespace UsersActivityApp.Core.Entities.Concrete
     /// Дата последней активности пользователя в системе.
     /// </summary>
     public DateTime? LastActivity { get; set; }
+
+    #endregion
+
+    #region Конструкторы
+
+    public UserActivity(int userId, DateTime registrationDate, DateTime? lastActivity = null)
+    {
+      Id = userId;
+      RegistrationDate = registrationDate;
+      LastActivity = lastActivity;
+    }
+
+    public UserActivity()
+    {
+    }
+
+    #endregion
   }
 }

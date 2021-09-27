@@ -7,6 +7,9 @@ using UsersActivityApp.DataAccess.Abstract;
 
 namespace UsersActivityApp.Business.Concrete
 {
+  /// <summary>
+  /// Сервис для расчета метрик.
+  /// </summary>
   public class MetricsCalculationService : IMetricsCalculationService
   {
     private IEnumerable<UserActivity> _userActivities;
@@ -14,6 +17,10 @@ namespace UsersActivityApp.Business.Concrete
     private readonly int dayN = 7;
     private readonly int percent = 100;
 
+    /// <summary>
+    /// Конструктор класса.
+    /// </summary>
+    /// <param name="userRepository">Репозиторий.</param>
     public MetricsCalculationService(IUserActivityRepository userRepository)
     {
       _userRepository = userRepository;
@@ -36,7 +43,7 @@ namespace UsersActivityApp.Business.Concrete
             
       try
       {
-        var percentage = ( GetLastLogFor() / GetRegisteredDaysAgo() ) * percent;
+        var percentage = ( GetLastLog() / GetRegisteredDaysAgo() ) * percent;
         return Math.Round(percentage);
       }
       catch (DivideByZeroException)
@@ -45,7 +52,12 @@ namespace UsersActivityApp.Business.Concrete
       }
     }
 
-    private decimal GetLastLogFor()
+    /// <summary>
+    /// Получить количество пользователей, вернувшихся 
+    /// в систему в расчетный день или позже.
+    /// </summary>
+    /// <returns>Количество пользователей.</returns>
+    private decimal GetLastLog()
     {
       return (decimal)_userActivities.Where(x =>  
         x.LastActivity != null &&
@@ -53,6 +65,11 @@ namespace UsersActivityApp.Business.Concrete
         .Count();
     }
 
+    /// <summary>
+    /// Получить количество пользователей, установивших 
+    /// приложение N дней назад или раньше.
+    /// </summary>
+    /// <returns>Количество пользователей.</returns>
     private decimal GetRegisteredDaysAgo()
     {
       return (decimal)_userActivities.Where(x => 
@@ -60,6 +77,10 @@ namespace UsersActivityApp.Business.Concrete
         .Count();
     }
 
+    /// <summary>
+    /// Заполнить значениями внутренний список действий пользователей.
+    /// </summary>
+    /// <param name="userActivities">Список действий пользователей.</param>
     private void InitUserActivities(IEnumerable<UserActivity> userActivities = null)
     {
       if (userActivities == null || userActivities.Count() == 0)

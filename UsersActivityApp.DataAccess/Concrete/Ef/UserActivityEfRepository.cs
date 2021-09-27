@@ -9,13 +9,27 @@ using UsersActivityApp.DataAccess.Abstract;
 
 namespace UsersActivityApp.DataAccess.Concrete.Ef
 {
+  /// <summary>
+  /// Репозиторий для работы с активностями пользователей.
+  /// </summary>
   public class UserActivityEfRepository : IEfEntityRepository<UserActivity>, IUserActivityRepository
   {
+    #region Поля и свойства
+
     private UsersActivityDbContext _context;
+
+    #endregion
+
+    #region Конструкторы
+
     public UserActivityEfRepository(UsersActivityDbContext context)
     {
       _context = context;
     }
+
+    #endregion
+
+    #region Методы
 
     public void Add(UserActivity entity)
     {
@@ -62,5 +76,7 @@ namespace UsersActivityApp.DataAccess.Concrete.Ef
       _context.UserActivities.Remove(dbEntry);
       _context.SaveChanges();
     }
+
+    #endregion
   }
 }
