@@ -21,8 +21,8 @@ const AddUserActivities = ( { onCreate } ) => {
     }
 
     return (
-        <form onSubmit={submitHandler}>
-            <Input type="number" value={userId} onChange={event => setUserId(event.target.value) }/>
+        <form className="add-user-activities" onSubmit={submitHandler}>
+            <Input type="number" min="1" value={userId} onChange={event => setUserId(event.target.value) }/>
             <Input type="date" value={registrationDate} onChange={event => setregistrationDate(event.target.value) }/>
             <Input type="date" value={lastActivity} onChange={event => setlastActivity(event.target.value) }/>
             <Button type="submit">Добавить</Button>

@@ -26,8 +26,10 @@ const MetricsCalculator = () => {
 
     return (
         <div>
-            <Button onClick={ calculateRollingRetention }>Calculate</Button>
-            <span className="result-rollingretention">{rollingRetention}</span>
+            <div className="result-rollingretention">
+                <Button onClick={ calculateRollingRetention }>Calculate</Button>
+                <p>{rollingRetention}</p>
+            </div>
             {
                 lifeTime.length ?
                     <LifeTimeBar lifeTime={lifeTime} /> :

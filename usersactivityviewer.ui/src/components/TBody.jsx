@@ -2,7 +2,13 @@ import React from 'react';
 
 const TBody = ({activity, onDelete}) => {    
     function formatDate(stringDate) {
-        return new Date(stringDate).toLocaleDateString();
+        var timestamp = Date.parse(stringDate);
+        
+        if (isNaN(timestamp)) {
+            return "";
+        }
+        
+        return new Date(timestamp).toLocaleDateString();
     }
 
     return (

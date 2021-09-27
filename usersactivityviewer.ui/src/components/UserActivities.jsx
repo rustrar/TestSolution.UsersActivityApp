@@ -27,7 +27,9 @@ const UserActivities = () => {
     function addActivity(value)
     {
         setActivities(
-            activities.concat([
+            activities
+                .filter(el => el.id != value.id)
+                .concat([
                 {
                     id: value.id,
                     registrationDate: value.registrationDate,

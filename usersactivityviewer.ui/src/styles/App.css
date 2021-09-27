@@ -20,23 +20,8 @@
 }
 
 .App {
-    width: 1334px;
+    width: 800px;
     height: auto;
-}
-
-button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
 }
 
 table {
@@ -47,8 +32,7 @@ table {
     color: #5D6E97;
 }
 
-th, 
-td {
+th, td {
     text-align: left;
     padding: 8px;
 }
@@ -64,12 +48,32 @@ td {
     background: #FFFFFF;
 }
 
-input:focus {
-    border: 1px solid #d6dff5;
-    outline: none;
-}
-
 .delete-btn {
     display: block;
     margin: auto;
 } 
+
+.result-rollingretention {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.result-rollingretention p {
+    width: 100px;
+    height: 40px;
+    margin: 5px;
+    padding: 13px;
+
+    border-radius: 20px;
+    border: none;
+    
+    text-align: center;    
+    
+    background: #FFFFFF;
+    color: #5D6E97;
+}
+
+.add-user-activities {
+    display: flex;
+    justify-content: space-between;
+}
