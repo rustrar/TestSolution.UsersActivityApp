@@ -32,7 +32,8 @@ table {
     color: #5D6E97;
 }
 
-th, td {
+th,
+td {
     text-align: left;
     padding: 8px;
 }
@@ -51,7 +52,7 @@ td {
 .delete-btn {
     display: block;
     margin: auto;
-} 
+}
 
 .result-rollingretention {
     display: flex;
@@ -66,9 +67,9 @@ td {
 
     border-radius: 20px;
     border: none;
-    
-    text-align: center;    
-    
+
+    text-align: center;
+
     background: #FFFFFF;
     color: #5D6E97;
 }
