@@ -19,7 +19,7 @@ namespace UsersActivityApp.DataAccess.Concrete.Ef
 
     public void Add(UserActivity entity)
     {
-      UserActivity dbEntry = Get(x => x.Id == entity.Id);
+      var dbEntry = Get(x => x.Id == entity.Id);
       if (dbEntry == null)
         _context.UserActivities.Add(entity);
       else
@@ -34,11 +34,7 @@ namespace UsersActivityApp.DataAccess.Concrete.Ef
     public void AddList(List<UserActivity> entities)
     {
       foreach (var entity in entities)
-      {
         Add(entity);
-      }
-      //_context.UserActivities.AddRange(entities);
-      //_context.SaveChanges();
     }
 
     public UserActivity Get(Expression<Func<UserActivity, bool>> filter)
@@ -54,6 +50,16 @@ namespace UsersActivityApp.DataAccess.Concrete.Ef
     public void Update(UserActivity entity)
     {
       _context.UserActivities.Update(entity);
+      _context.SaveChanges();
+    }
+
+    public void Delete(int id)
+    {
+      var dbEntry = _context.UserActivities.FirstOrDefault(x => x.Id == id);
+      if (dbEntry == null)
+        return;
+
+      _context.UserActivities.Remove(dbEntry);
       _context.SaveChanges();
     }
   }

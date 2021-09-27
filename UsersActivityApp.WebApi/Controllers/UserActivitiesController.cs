@@ -38,5 +38,13 @@ namespace UsersActivityApp.WebApi.Controllers
       _service.Add(userActivity);
       return Ok();
     }
+
+    // DELETE: api/UserActivity
+    [HttpDelete("useractivity/{id}")]
+    public ActionResult DeleteUserActivity(int id)
+    {
+      _service.Delete(id);
+      return Ok();
+    }
   }
 }

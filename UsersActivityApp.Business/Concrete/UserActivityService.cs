@@ -34,5 +34,10 @@ namespace UsersActivityApp.Business.Concrete
     {
       return _userRepository.GetList();
     }
+
+    public void Delete(int id)
+    {
+      _userRepository.Delete(id);
+    }
   }
 }

@@ -16,5 +16,7 @@ namespace UsersActivityApp.Core.Data.Abstract
     void AddList(List<T> entities);
 
     void Update(T entity);
+
+    void Delete(int id);
   }
 }

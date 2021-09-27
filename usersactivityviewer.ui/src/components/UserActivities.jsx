@@ -17,7 +17,11 @@ const UserActivities = () => {
 
     function removeActivity(id)
     {
-        setActivities(activities.filter((activity) => activity.id !== id));
+        fetch('http://localhost:1999/api/useractivity/' + id, {
+            method: 'DELETE'
+          })
+          .then(setActivities(activities
+            .filter(activity => activity.id != id)));
     }
 
     function addActivity(value)

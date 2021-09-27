@@ -10,5 +10,7 @@ namespace UsersActivityApp.Business.Abstract
     void Add(UserActivity user);
 
     void AddList(List<UserActivity> users);
+
+    void Delete(int id);
   }
 }
